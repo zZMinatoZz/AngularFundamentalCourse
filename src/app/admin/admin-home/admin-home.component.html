@@ -1,0 +1,106 @@
+<mat-sidenav-container>
+    <mat-sidenav opened mode="side" class="mat-elevation-z8">
+        <img src="./assets/images/minchen3.jpg" class="avatar mat-elevation-z8" />
+
+        <h4 class="name">Nguyen Hoai Nam</h4>
+        <p class="designation">Software engineer</p>
+
+        <!-- <mat-divider></mat-divider> -->
+        
+        <button routerLink="/admin/home" mat-button class="menu-button">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <!-- collapse menu -->
+        <mat-nav-list>
+            <!-- lv1 -->
+            <span>
+                <!-- lv2 -->
+                <span>
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <!-- header -->
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                                        <mat-icon>group</mat-icon>
+                                        Operations
+                                    </div>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <!-- <span>
+                                <mat-list-item>
+                                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                                        <mat-icon>add_circle</mat-icon>
+                                        Books
+                                    </div>
+                                </mat-list-item>
+                            </span> -->
+                            <span>
+                                <mat-list-item routerLink="/admin/home/create">
+                                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                                        <mat-icon>add_circle</mat-icon>
+                                        Create
+                                    </div>
+                                </mat-list-item>
+                            </span>
+                            <!-- <span>
+                                <mat-list-item>
+                                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                                        <mat-icon>add_circle</mat-icon>
+                                        Create
+                                    </div>
+                                </mat-list-item>
+                            </span>
+                            <span>
+                                <mat-list-item>
+                                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                                        <mat-icon>add_circle</mat-icon>
+                                        Create
+                                    </div>
+                                </mat-list-item>
+                            </span> -->
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </span>
+            </span>
+            
+        </mat-nav-list>
+
+        
+        
+        
+        <!-- <button mat-button class="menu-button">
+            <mat-icon>person</mat-icon>
+            <span>Profile</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>info</mat-icon>
+            <span>About</span>
+        </button> -->
+
+        <!-- <mat-divider></mat-divider> -->
+
+        <!-- <button mat-button class="menu-button">
+            <mat-icon>help</mat-icon>
+            <span>Help</span>
+        </button> -->
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <!-- Main content here! -->
+            <div style="width: 100%;">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!-- <mat-drawer-container>
+     <mat-drawer mode="side" opened class="sidenav mat-elevation-z8">Left contenttttttttttttttttttt</mat-drawer>
+     <mat-drawer-content class="content mat-elevation-z8">Main content</mat-drawer-content>
+ </mat-drawer-container> -->

@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-md-offset-1">
+        <ng-container *ngIf="booksOnCart.length > 0 else whenNoBookOnCart">
+            <table class="table table-hover mt-5">
+                <thead class="table-head">
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Total</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr *ngFor="let book of booksOnCart">
+                            <td class="col-sm-8 col-md-6">
+                            <div class="media">
+                                <div class="thumbnail pull-left" href="#"> <img class="media-object" src="{{book.img}}" style="width: 60px; height: 80px;"> </div>
+                                <div class="media-body ml-2">
+                                    <h2 class="media-heading">{{book.bookName}}</h2>
+                                    <h3 class="media-heading">{{book.author}}</h3>
+                                </div>
+                            </div></td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                            <input #inputCount (change)="changeCount(book, inputCount.value)" type="number" min="1" max="10" class="form-control" id="exampleInputEmail1" [attr.value]="book.quantity">
+                            </td>
+                            <td class="col-sm-1 col-md-1 text-center"><strong>{{book.price | priceChange: 'VND'}}</strong></td>
+                            <td class="col-sm-1 col-md-1 text-center"><strong>{{calculateTotalPriceOfBook(book) | priceChange: 'VND'}}</strong></td>
+                            <td class="col-sm-1 col-md-1">
+                            <button mat-raised-button color="warn" (click)="removeFromCart(book)">
+                                Remove <mat-icon>delete</mat-icon>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td><h2>Total</h2></td>
+                            <td class="text-right"><h3><strong>{{totalPrice | priceChange: 'VND'}}</strong></h3></td>
+                        </tr>
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>
+                                <button (click)="clearCart()" mat-raised-button color="warn">
+                                    Clear cart<mat-icon>delete</mat-icon>
+                                </button>
+                            </td>
+                            <td>
+                                <button mat-raised-button color="accent" routerLink="/home">
+                                    Continue Shopping
+                                </button>
+                            </td>
+                            <td>
+                                <button mat-raised-button color="primary" (click)="checkOut()">
+                                    Checkout<mat-icon>shopping_cart</mat-icon>
+                                </button>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+        </ng-container>
+    </div>
+</div>
+
+<ng-template #whenNoBookOnCart>
+    <h2 class="mt-2">Your cart is empty!</h2>
+</ng-template>

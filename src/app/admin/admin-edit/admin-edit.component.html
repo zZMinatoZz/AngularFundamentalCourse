@@ -1,0 +1,36 @@
+<form *ngIf="book" [formGroup]="editForm">
+    <mat-toolbar class="mat-elevation-z6" color="primary">
+        <mat-toolbar-row>
+            <h2>Book Edit</h2>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <h2 class="mt-5">Details: </h2>
+
+    <div>
+        <mat-form-field class="width-30">
+            <mat-label>Book Name (*)</mat-label>
+            <input matInput formControlName="bookName" [(ngModel)]="book.bookName">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field class="width-30">
+            <mat-label>Author (*)</mat-label>
+            <input matInput formControlName="author" [(ngModel)]="book.author">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field class="width-30">
+            <mat-label>Price (Only accept input number) (*)</mat-label>
+            <input matInput formControlName="price" [(ngModel)]="book.price">
+            <mat-error *ngIf="controls.price.hasError('error-input')">
+                Only input <strong>number</strong>
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" [disabled]="editForm.invalid || !editForm.dirty" (click)="saveData()">Save</button>
+    <button class="ml-1" mat-raised-button color="accent" (click)="clearData()">Clear</button>
+
+</form>

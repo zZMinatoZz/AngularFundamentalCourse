@@ -1,0 +1,18 @@
+<nav>
+    <mat-toolbar class="mat-elevation-z6" color="primary">
+        <mat-toolbar-row>
+            <button mat-button routerLink="/home">Home</button>
+
+            <div fxFlex fxLayoutAlign="end">
+                <button mat-button routerLink="/home/cart">
+                    <mat-icon matBadge="{{booksCount}}" matBadgeColor="warn" fxLayoutAlign="end">shopping_cart</mat-icon>
+                </button>
+            </div>
+            <!-- <div>
+                <mat-form-field fxFlex fxLayoutAlign="end">
+                    <input matInput>
+                </mat-form-field>
+            </div> -->
+        </mat-toolbar-row>
+    </mat-toolbar>
+</nav>

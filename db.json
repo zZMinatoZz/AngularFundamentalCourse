@@ -1,0 +1,52 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "bookName": "A promised land",
+      "author": "Barack Obama",
+      "price": "100000",
+      "img": "./assets/images/apl.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "bookName": "Dog man Mothering heights",
+      "author": "Dav Pilkey",
+      "price": 120000,
+      "img": "./assets/images/dogman.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "bookName": "Jujutsu kaisen",
+      "author": "Gege Akutami",
+      "price": 50000,
+      "img": "./assets/images/jujutsukaisen.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "bookName": "Sooley",
+      "author": "John Grisham",
+      "price": 100000,
+      "img": "./assets/images/sooley.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "bookName": "The madness of crowds",
+      "author": "Louis Penny",
+      "price": 130000,
+      "img": "./assets/images/tmoc.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "bookName": "The hill we climb",
+      "author": "Amanda Gorman",
+      "price": 160000,
+      "img": "./assets/images/thwc.jpg",
+      "quantity": 1
+    }
+  ]
+}

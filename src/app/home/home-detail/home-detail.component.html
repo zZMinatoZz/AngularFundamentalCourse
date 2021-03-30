@@ -1,0 +1,43 @@
+<div *ngIf="book" class="row mt-3">
+    <div class="col-4 item-photo">
+        <img style="max-width:100%;" src="{{book.img}}" />
+    </div>
+    <div class="col-8" style="border:0px solid gray">
+        <!-- Datos del vendedor y titulo del producto -->
+        <h2>{{book.bookName}}</h2>
+        <h4>{{book.author}}</h4>
+
+        <!-- Precios -->
+        <h3 class="title-price"><small>Price</small></h3>
+        <h3 style="margin-top:0px;">{{book.price | priceChange: 'VND'}}</h3>
+
+
+        <div class="section" style="padding-bottom:20px;">
+            <h3 class="title-attr"><small>Quantity</small></h3>
+            <div>
+                <button (click)="decrease()" mat-raised-button color="primary">
+                    <mat-icon>remove</mat-icon>
+                </button>
+                <input style="font-size: 15px;" disabled [(ngModel)]="book.quantity" />
+                <!-- <div (click)="increase()" class="btn-plus"><span class="fa fa-plus"></span></div> -->
+                <button (click)="increase()" mat-raised-button color="primary">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+
+        <!-- Botones de compra -->
+        <div class="section">
+            <!-- <button (click)="addToCart()"class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart"
+                    aria-hidden="true"></span> Add to cart <i class="fa fa-shopping-cart"></i></button> -->
+            <!-- <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Agregar a
+                    lista de deseos</a></h6> -->
+            <button mat-raised-button color="primary" (click)="addToCart(book)">
+                <mat-icon>
+                    shopping_cart
+                </mat-icon>
+                Add to cart
+            </button>
+        </div>
+    </div>
+</div>
